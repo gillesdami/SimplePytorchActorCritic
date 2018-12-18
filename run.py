@@ -1,7 +1,6 @@
 import argparse
 import torch
 import gym
-from torch.distributions import Categorical
 
 from Model import Policy
 from PytorchEnvWrapper import PytorchWrapper
@@ -18,6 +17,6 @@ model = Policy()
 model.load_state_dict(torch.load(params.load))
 model.eval()
 
-rewards, step = runPolicy(env, lambda obs: Categorical(model(obs)[0]).sample(), params.max_episode)
+rewards, step = runPolicy(env, lambda obs: model(obs)[0].max(0)[1].detach(), params.max_episode)
 
 print(sum(rewards) / step, step)
