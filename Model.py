@@ -11,9 +11,6 @@ class Policy(nn.Module):
         self.action_head = nn.Linear(128, 2)
         self.value_head = nn.Linear(128, 1)
 
-        self.saved_actions = []
-        self.rewards = []
-
     def forward(self, x):
         x = F.relu(self.affine1(x))
         action_scores = self.action_head(x)
