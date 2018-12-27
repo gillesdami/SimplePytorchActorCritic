@@ -1,6 +1,6 @@
 # Simple Pytorch Actor Critic
 
-This repository feature a minimalist actor critic model capable of solving 'CartPole-v0' gym environment. The model is written in pytorch and use tensorboardX.
+This repository feature a minimalist actor critic model capable of solving 'CartPole-v0' gym environment. The model is written in pytorch and uses tensorboardX.
 
 ![tensorboard_screen.png](tensorboard_screen.png)
 
